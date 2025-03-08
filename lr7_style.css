@@ -1,7 +1,6 @@
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    display: flex;
+    grid-template-columns: repeat(3, 15%);
     margin: 5px;
 }
 
@@ -15,37 +14,20 @@ main {
     gap: 150px;
 }
 
-.task-7 {
+.task-1#block {
     position: relative;
     width: 200px;
     height: 200px;
+    background-color: blue;
     border: 2px solid #000000;
+    transition: background-color 0.5s ease;
 }
 
-.task-7 #squere {
-    position: absolute;
-    width: 20px;
-    height: 20px;
+.task-1#block:hover {
     background-color: red;
-    animation: moveAround 1s linear infinite;
 }
 
-.task-8 {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 2px solid #000000;
-}
-
-.task-8 #squere {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    animation: moveAround 1s linear infinite, changeColor 1s linear infinite;
-}
-
-.task-9 {
+.task-2#block {
     position: relative;
     width: 200px;
     height: 200px;
@@ -53,12 +35,161 @@ main {
     overflow: hidden;
 }
 
-.task-9 #squere {
+.task-2 #text {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    transition: left 0.5s ease;
+    transition-delay: 0.5s;
+}
+
+.task-2:hover #text {
+    left: 0;
+}
+
+.task-3#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+.task-3#block #progress-bar {
+    margin-top: 90px;
+    margin-left: 25px;
+    width: 150px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    border: 2px solid #000000;
+    overflow: hidden;
+}
+
+.task-3#block #progress-bar #progress {
+    width: 0;
+    height: 100%;
+    background-color: green;
+    transition: width 2s ease;
+}
+
+.task-3#block #progress-bar:hover #progress {
+    width: 100%;
+}
+
+.task-4#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+.task-4#block #squere{
+    margin-top: 90px;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    animation: moveRight 2s ease 3;
+}
+
+.task-5#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+.task-5#block #squere{
+    margin-top: 90px;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    animation: moveRight 2s ease infinite;
+}
+
+.task-6#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border: 2px solid #000000;
+    animation: changeBackground 3s ease infinite;
+}
+
+.task-7#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+.task-7#block #squere {
     position: absolute;
     width: 20px;
     height: 20px;
     background-color: red;
-    animation: moveAndChangeColor 8s linear infinite;
+    animation: moveAround 1s linear infinite;
+}
+
+.task-8#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+}
+
+.task-8#block #squere {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    animation: moveAround 1s linear infinite, changeColor 1s linear infinite;
+}
+
+.task-9#block {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+    overflow: hidden;
+}
+
+.task-9#block #squere {
+    margin-top: 90px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    animation: moveAndChangeColor 1s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 180px;
+    }
+}
+
+@keyframes changeBackground {
+    0% {
+        background-color: blue;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: blue;
+    }
 }
 
 @keyframes moveAround {
@@ -66,21 +197,25 @@ main {
         top: 0;
         left: 0;
     }
+
     25% {
         top: 0;
         left: 100%;
         transform: translateX(-100%);
     }
+
     50% {
         top: 100%;
         left: 100%;
         transform: translate(-100%, -100%);
     }
+
     75% {
         top: 100%;
         left: 0;
         transform: translateY(-100%);
     }
+
     100% {
         top: 0;
         left: 0;
@@ -91,15 +226,19 @@ main {
     0% {
         background-color: red;
     }
+
     25% {
         background-color: blue;
     }
+
     50% {
         background-color: green;
     }
+
     75% {
         background-color: yellow;
     }
+
     100% {
         background-color: red;
     }
@@ -110,12 +249,14 @@ main {
         left: 0;
         background-color: red;
     }
+
     50% {
-        left: 90%; 
-        background-color: blue; 
+        left: 90%;
+        background-color: blue;
     }
+
     100% {
         left: 0;
-        background-color: red; 
+        background-color: red;
     }
 }
